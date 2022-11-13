@@ -2,25 +2,36 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour {
 
-    InputManager _input;
+    InputManager input;
 
-    [SerializeField] Transform focus;
-    [SerializeField] float distance = 8f;
-	[SerializeField] float distanceMax = 16f;
-	[SerializeField] float distanceMin = 4f;
-	[SerializeField] float scrollMultiplier = 4;
+	[SerializeField] Transform focus;
+	[SerializeField, Range(1f, 12f)] float sensX = 6f;
+	[SerializeField, Range(1f, 12f)] float sensY = 6f;
+	//private float rotationSpeed = 15f;
+	private float rotationSpeed = 200f;
+
+    private float distance = 8f;
+	[SerializeField, Min(1f)]  private float distanceMax = 16f;
+	[SerializeField, Min(1f)] private float distanceMin = 4f;
+	[SerializeField, Range(1, 10f)]  private float scrollMultiplier = 4;
+
     [SerializeField, Min(0f)] float focusRadius = 1f;
     [SerializeField, Range(0f, 1f)] float focusCentering = 0.5f;
     Vector3 focusPoint;
     Vector2 orbitAngles = new Vector2(20f, 0f);
-    [SerializeField, Range(1f, 360f)] float rotationSpeed = 180f;
+
 	[SerializeField, Range(-89f, 89f)] float minVerticalAngle = -10f, maxVerticalAngle = 60f;
 
 	void Awake() {
 		focusPoint = focus.position;
 		transform.localRotation = Quaternion.Euler(orbitAngles);
-        _input = FindObjectOfType<InputManager>();
+        input = FindObjectOfType<InputManager>();
 	}
+	
+    void Start() {
+        Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+    }
 
     public void HandleCamera() {
 		UpdateFocusPoint();
@@ -61,14 +72,16 @@ public class CameraManager : MonoBehaviour {
 	}
 
     private void UpdateDistance() {
-		distance -= _input.scrollInput * scrollMultiplier;
+		distance -= input.scrollInput * scrollMultiplier;
 		distance = Mathf.Clamp(distance, distanceMin, distanceMax);
 	}
 
 	bool ManualRotation() {
-        const float e = 0.001f;
-		if (_input.lookInput.x < -e || _input.lookInput.x > e || _input.lookInput.y < -e || _input.lookInput.y > e) {
-			orbitAngles += rotationSpeed * Time.unscaledDeltaTime * _input.lookInput;
+		
+		if (input.lookInput.magnitude !=0) {
+			input.lookInput.x *= sensX;
+			input.lookInput.y *= sensY;
+			orbitAngles += rotationSpeed * Time.unscaledDeltaTime * input.lookInput;
 			return true;
 		}
 		return false;
@@ -89,10 +102,5 @@ public class CameraManager : MonoBehaviour {
 		else if (orbitAngles.y >= 360f) {
 			orbitAngles.y -= 360f;
 		}
-	}
-
-	public void HideCursor() {
-		Cursor.lockState = CursorLockMode.Locked;
-		Cursor.visible = false;
 	}
 }
