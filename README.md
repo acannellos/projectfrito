@@ -4,9 +4,8 @@
 projectfrito is my intro to Unity and C#, a WIP third-person shooter
 
 latest playtest build as of: 11/13/2022
-in this build - grappling
-
 <br>
+in this build - grappling
 
 ## Usage
 ```sh
@@ -25,10 +24,14 @@ Controls:
 - Left Mouse (Hold) - Grapple
 - X - Cut velocity to 0
 
+<br>
+
+***
+
 ## thanks
-[Catlike Coding](https://catlikecoding.com/unity/tutorials/)
-[Sebastian Lague](https://www.youtube.com/c/SebastianLague/videos)
-[Dani](https://www.youtube.com/c/DanisTutorials/videos)
-[Dave](https://www.youtube.com/channel/UCIWlCE2kt0RXCJLRp8HjhiQ/videos)
-[Ned](https://www.youtube.com/c/NedMakesGames/videos)
+[Catlike Coding](https://catlikecoding.com/unity/tutorials/)<br>
+[Sebastian Lague](https://www.youtube.com/c/SebastianLague/videos)<br>
+[Dani](https://www.youtube.com/c/DanisTutorials/videos)<br>
+[Dave](https://www.youtube.com/channel/UCIWlCE2kt0RXCJLRp8HjhiQ/videos)<br>
+[Ned](https://www.youtube.com/c/NedMakesGames/videos)<br>
 [Sebastian Graves](https://www.youtube.com/user/ICampEasts/videos)
