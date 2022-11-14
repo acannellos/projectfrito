@@ -14,7 +14,6 @@ in this build: grappling
 4. Alt-F4 to quit
 
 ## Controls
-Controls:<br>
 WASD - Move<br>
 Mouse X/Y - Look<br>
 Mouse Scroll - Zoom<br>
@@ -24,7 +23,7 @@ X - Cut velocity to 0
 
 ***
 
-## ty
+## thank you
 [Catlike Coding](https://catlikecoding.com/unity/tutorials/)<br>
 [Sebastian Lague](https://www.youtube.com/c/SebastianLague/videos)<br>
 [Sebastian Graves](https://www.youtube.com/user/ICampEasts/videos)<br>
