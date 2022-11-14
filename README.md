@@ -24,14 +24,12 @@ Controls:
 - Left Mouse (Hold) - Grapple
 - X - Cut velocity to 0
 
-<br>
-
 ***
 
 ## thanks
 [Catlike Coding](https://catlikecoding.com/unity/tutorials/)<br>
 [Sebastian Lague](https://www.youtube.com/c/SebastianLague/videos)<br>
+[Sebastian Graves](https://www.youtube.com/user/ICampEasts/videos)<br>
 [Dani](https://www.youtube.com/c/DanisTutorials/videos)<br>
 [Dave](https://www.youtube.com/channel/UCIWlCE2kt0RXCJLRp8HjhiQ/videos)<br>
-[Ned](https://www.youtube.com/c/NedMakesGames/videos)<br>
-[Sebastian Graves](https://www.youtube.com/user/ICampEasts/videos)
+[Ned Makes Games](https://www.youtube.com/c/NedMakesGames/videos)
